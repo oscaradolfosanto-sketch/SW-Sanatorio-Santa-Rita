@@ -1,0 +1,259 @@
+:root {
+    --primary-green: #109d59;
+    --dark-green: #0d7e47;
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-gray: #666;
+    --accent-turq: #30cfc0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+html { scroll-behavior: smooth; }
+
+/* --- HERO CORRECIONES --- */
+.hero { height: 100vh; background: url('../img/edificio.jpg') center/cover; display: flex; align-items: center; justify-content: center; }
+.hero-overlay { background: rgba(255,255,255,0.7); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+
+.hero h1 { color: var(--primary-green); font-size: 3.5rem; text-transform: uppercase; }
+/* Corrección: Santa Rita sin negrita */
+.no-bold { font-weight: normal; }
+
+/* Corrección: Dirección en cursiva */
+.address.italic { 
+    color: var(--text-gray); 
+    font-size: 1rem; 
+    font-style: italic; 
+    margin-bottom: 30px; 
+}
+
+/* --- ESTILOS DE BOTONES Y SECCIONES (Mantener igual) --- */
+.btn-nav { background: var(--primary-green); color: white; border: none; padding: 12px 30px; border-radius: 5px; cursor: pointer; margin-top: 20px; font-weight: bold; }
+.services-section, .doctors-section { background-color: var(--primary-green); padding: 80px 20px; }
+.section-title { color: white; text-align: center; margin-bottom: 40px; font-size: 2rem; }
+.services-grid, .doctors-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.service-card, .doctor-card { background: white; padding: 35px; border-radius: 25px; text-align: center; }
+.service-card h3 { color: var(--primary-green); margin-bottom: 15px; }
+.doc-name { color: var(--primary-green); margin-bottom: 2px; }
+.specialty { font-size: 0.8rem; color: var(--text-gray); font-weight: bold; text-transform: uppercase; }
+.description { font-size: 0.9rem; line-height: 1.4; margin-top: 10px; }
+
+/* Botón Turno Verde */
+.action-container { text-align: center; margin-top: 50px; }
+.btn-turno-destacado { background: var(--primary-green); color: white; border: 2px solid white; padding: 18px 45px; font-size: 1.3rem; border-radius: 50px; cursor: pointer; font-weight: bold; }
+
+/* --- SECCIÓN MAPA CORREGIDA --- */
+.map-section { background: white; padding: 80px 0; }
+
+/* Distribución: Texto izquierda, Mapa derecha */
+.map-layout { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px;
+    flex-wrap: wrap; /* Para móviles */
+}
+
+.map-text-container { flex: 1; text-align: left; }
+.map-title { font-size: 3rem; color: var(--accent-turq); line-height: 1; margin-bottom: 30px; }
+.map-title span { color: var(--accent-turq); }
+
+/* Contenedor del botón debajo del texto */
+.info-btn-container { margin-top: 20px; }
+.btn-info { background: var(--primary-green); color: white; border: none; padding: 12px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+.map-wrapper { flex: 1.2; }
+.map-img-final { 
+    width: 100%; 
+    max-width: 550px; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+.modal {
+    z-index: 9999; /* Asegura que el modal siempre esté por encima de todo */
+}
+
+
+
+
+
+/* --- MODAL (Mantener igual) --- */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 1000; }
+.modal.show { display: flex; }
+.modal-content { background: white; padding: 40px; border-radius: 20px; text-align: center; position: relative; width: 90%; max-width: 400px; }
+.btn-close { position: absolute; top: 10px; right: 15px; font-size: 2rem; border: none; background: none; cursor: pointer; }
+.tel-link { background: var(--primary-green); color: white; text-decoration: none; padding: 5px 15px; border-radius: 5px; font-weight: bold; }
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .map-layout { flex-direction: column; text-align: center; }
+    .map-text-container { text-align: center; }
+}
+/* --- CORRECCIÓN DE SUPERPOSICIÓN (Z-INDEX) --- */
+
+
+.hero, .services-section, .doctors-section, .map-section {
+    position: relative;
+    z-index: 1; /* Mantiene las secciones en un nivel base */
+}
+
+/* --- CORRECCIÓN TAMAÑO FOTOS MÉDICOS --- */
+.doc-img-container {
+    width: 90px;  /* Reducido de 110px para mejor equilibrio */
+    height: 90px; /* Reducido de 110px */
+    margin: -50px auto 15px auto; /* Ajuste de posición superior */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.doc-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- CORRECCIÓN DE MÁRGENES Y PADDING (BORDES PEGADOS) --- */
+.container-spacing {
+    padding-left: 40px !important;  /* Evita que el contenido toque los bordes */
+    padding-right: 40px !important; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ajuste específico para la sección del mapa */
+.map-section {
+    padding: 100px 0; /* Más aire arriba y abajo */
+}
+
+.map-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px; /* Más espacio entre el texto y el mapa */
+}
+
+/* --- AJUSTE DEL BOTÓN DE TURNO --- */
+.action-container {
+    position: relative;
+    z-index: 10; /* Asegura que el botón no sea tapado por otras tarjetas */
+    margin-top: 50px;
+}
+
+
+/* Localiza .modal-content y reemplázalo por esto */
+.modal-content { 
+    background: white; 
+    padding: 50px 40px; /* Aumentamos el aire interno del cuadro blanco */
+    border-radius: 20px; 
+    text-align: center; 
+    position: relative; 
+    width: 90%; 
+    max-width: 450px; 
+    z-index: 9999; /* Asegura que esté al frente */
+}
+
+/* Localiza .turno-item y reemplázalo por esto */
+.turno-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 25px 0; /* Mayor espacio vertical entre cada servicio */
+    margin-bottom: 10px; /* Separación extra entre filas */
+    border-bottom: 1px solid #eee; 
+}
+
+
+
+
+
+/* --- CORRECCIÓN DEFINITIVA SECCIÓN 6 --- */
+.section-contacto {
+    background-color: #ffffff;
+    padding: 100px 5% !important; /* El 5% garantiza que nunca toque los bordes laterales */
+    display: flex;
+    justify-content: center;
+}
+
+.contacto-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Centra el contenido en pantallas grandes */
+    gap: 50px;
+}
+
+/* Texto a la izquierda */
+.contacto-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.contacto-titulo {
+    font-size: 3.5rem;
+    color: #30cfc0; /* Color turquesa del PDF */
+    line-height: 1;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.contacto-btn-box {
+    margin-top: 10px;
+}
+
+/* Mapa a la derecha */
+.contacto-mapa {
+    flex: 1.2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.img-mapa-nueva {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* --- ESPACIADO EN EL MODAL (SOLICITAR TURNO) --- */
+.turno-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Espacio vertical entre cada servicio */
+    border-bottom: 1px solid #eee;
+}
+
+.turno-item span {
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+/* Responsive: En celulares se pone uno debajo del otro */
+@media (max-width: 850px) {
+    .contacto-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contacto-info {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .contacto-mapa {
+        justify-content: center;
+    }
+    .contacto-titulo {
+        font-size: 2.5rem;
+    }
+}

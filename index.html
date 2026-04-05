@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanatorio Santa Rita</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+    <section id="page-1" class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>SANATORIO <br> <span class="no-bold">Santa Rita</span></h1>
+                <p class="welcome-text">Bienvenido</p>
+                <p class="address italic">Av. 9 de julio 500, Santa Maria, Catamarca</p>
+                <button class="btn-nav" onclick="scrollToSection('page-2')">Continuar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-2" class="services-section">
+        <div class="container">
+            <h2 class="section-title">NUESTROS SERVICIOS</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="material-symbols-outlined icon-med">favorite</span>
+                    <h3>Guardia</h3>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined icon-med">stethoscope</span>
+                    <h3>Pediatría</h3>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined icon-med">medical_services</span>
+                    <h3>Internación</h3>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined icon-med">biotech</span>
+                    <h3>Diagnósticos por imagen</h3>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined icon-med">health_and_safety</span>
+                    <h3>Detección de cáncer</h3>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined icon-med">microbiology</span>
+                    <h3>Pruebas de ITS</h3>
+                    <span class="plus-icon">+</span>
+                </div>
+            </div>
+            <div class="action-container">
+                <button class="btn-turno-destacado" id="btn-abrir-turnos">SOLICITAR TURNO</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="page-4" class="doctors-section">
+        <div class="container">
+            <h2 class="section-title white-text">Conoce a nuestros médicos</h2>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doc-img-container"><img src="img/dra_sandra.jpg" alt="Dra. Sandra"></div>
+                    <h4 class="doc-name">Dra. Sandra Herrera</h4>
+                    <p class="specialty">GINECÓLOGA</p>
+                    <p class="description">Con más de una década de experiencia, la Dra. Herrera es experta en ginecología general y salud de la mujer.</p>
+                    <span class="plus-icon-green">+</span>
+                </div>
+                <div class="doctor-card">
+                    <div class="doc-img-container"><img src="img/dr_arturo.jpg" alt="Dr. Arturo"></div>
+                    <h4 class="doc-name">Dr. Arturo de la Peña</h4>
+                    <p class="specialty">GINECÓLOGO Y OBSTETRA</p>
+                    <p class="description">Médico del centro, el Dr. Arturo se especializa en cirugía ginecológica y atención obstétrica.</p>
+                    <span class="plus-icon-green">+</span>
+                </div>
+                <div class="doctor-card">
+                    <div class="doc-img-container"><img src="img/dra_natalia.jpg" alt="Dra. Natalia"></div>
+                    <h4 class="doc-name">Dra. Natalia Ramos</h4>
+                    <p class="specialty">GINECÓLOGA Y OBSTETRA</p>
+                    <p class="description">La Dra. Ramos cuenta con más de 15 años de experiencia en las áreas de ginecología y obstetricia.</p>
+                    <span class="plus-icon-green">+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+   <section id="page-6" class="section-contacto">
+    <div class="contacto-wrapper">
+        <div class="contacto-info">
+            <h2 class="contacto-titulo">Encuéntranos <br> <span>aquí</span></h2>
+            <div class="contacto-btn-box">
+                <a href="https://www.google.com/maps/search/Sanatorio+Santa+Rita+Santa+Maria+Catamarca" target="_blank" style="text-decoration: none;">
+                    <button class="btn-info">Más información</button>
+                </a>
+            </div>
+        </div>
+        
+        <div class="contacto-mapa">
+            <img src="img/mapa.jpg" alt="Mapa de ubicación" class="img-mapa-nueva">
+        </div>
+    </div>
+</section>
+
+
+
+    
+    <div id="modal-turnos" class="modal">
+        <div class="modal-content">
+            <button class="btn-close" id="btn-cerrar-turnos">&times;</button>
+            <h2 class="green-text">Canales de Atención</h2>
+            <div class="turnos-list">
+                <div class="turno-item">
+                    <span>Guardia</span>
+                    <a href="tel:+543838421000" class="tel-link">Llamar</a>
+                </div>
+                <div class="turno-item">
+                    <span>Pediatría</span>
+                    <a href="tel:+543838421001" class="tel-link">Llamar</a>
+                </div>
+                <div class="turno-item">
+                    <span>Internación</span>
+                    <a href="tel:+543838421002" class="tel-link">Llamar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
