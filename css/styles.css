@@ -153,7 +153,7 @@ html { scroll-behavior: smooth; }
 .action-container {
     position: relative;
     z-index: 10; /* Asegura que el botón no sea tapado por otras tarjetas */
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 
